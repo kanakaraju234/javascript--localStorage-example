@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type"	content="application/xhtml+xml; charset=UTF-8" />
+<title>WelcomeToBootstrap</title>
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"	href="/css/style.css">
+
+
+
+</head>
+<body>
+
+<button>Change user</button>
+<h1></h1>
+
+<script>   var myButton =document.querySelector('button');
+    var myHeading =document.querySelector('h1');
+
+    function setUserName()
+    {
+        var myName = prompt("enter name");
+        
+        localStorage.setItem("name",myName);
+        
+        myHeading.textContent = "mozilla "+ myName;
+    }
+    
+    if(!localStorage.getItem('name'))
+        {
+            setUserName();
+        }
+    else
+        {
+            var storedName = localStorage.getItem('name');
+            
+            myHeading.textContent = "Mozilla is cool" + storedName;
+        }
+    myButton.onclick = function()
+    {
+        setUserName();
+    }
+
+</script>
+</body>
+</html>
